@@ -11,7 +11,7 @@ pipeline {
      steps {
        //Perform build steps here
        //We will be using Maven as our build automation tool
-       sh 'mv1 clean package'
+       sh 'pwsh-- clean Build'
    }}
    stage('Unit and Integration Tests') {
        steps {
