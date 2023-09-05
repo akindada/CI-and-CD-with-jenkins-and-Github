@@ -38,15 +38,15 @@ pipeline {
       stage ("Build successful"){
     steps {
        //Configure the pipeline to send notification emails to a specified email address at the end of test and security scan stages
-              Echo "emailext body: (Your Jenkins build is successful. The changes are deployed successfully),
-                 subject: (Jenkins build and deployment success),
+              Echo "emailext body: (Your Jenkins build is successful. The changes are deployed successfully)
+                 subject: (Jenkins build and deployment success)
                  to: (developer1@example.com)"
     }
      stage ("Build failure"){
     steps {
        //Configure the pipeline to send notification emails to a specified email address at the end of test and security scan stages
-              Echo "emailext body: (Your Jenkins build and deployment failed. Please check the logs for more details),
-                 subject: (Jenkins build and deployment failure),
+              Echo "emailext body: (Your Jenkins build and deployment failed. Please check the logs for more details)
+                 subject: (Jenkins build and deployment failure)
                  to: (developer1@example.com)"         
     }
 }
