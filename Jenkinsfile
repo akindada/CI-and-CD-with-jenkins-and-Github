@@ -39,7 +39,7 @@ stage("Build successful") {
     steps {
         emailext body: 'Your Jenkins build is successful. The changes are deployed successfully',
                  subject: 'Jenkins build and deployment success',
-                 to: 'caldinal.toludada@gmail.com.com'
+                 to: 'developer@example.com'
     }
 }
 
@@ -47,7 +47,7 @@ stage("Build failure") {
     steps {
         emailext body: 'Your Jenkins build and deployment failed. Please check the logs for more details',
                  subject: 'Jenkins build and deployment failure',
-                 to: 'caldinal.toludada@gmail.com.com'
+                 to: 'developer@example.com'
     }
 }
 
