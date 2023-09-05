@@ -1,11 +1,6 @@
 pipeline {
     agent any
     
-    tools {
-        // Install the Maven version configured as "M3" and add it to the path.
-        echo "install maven"
-    }
-  
   stages{  
    stage('Build') {
      steps {
@@ -40,17 +35,19 @@ pipeline {
        echo "Use TestNG to carry out integration test"          
   }
 }
-      //Configure the pipeline to send notification emails to a specified email address at the end of test and security scan stages
-post {
-    success {
-        emailext body: '''Your Jenkins build is successful. The changes are deployed successfully.''',
-                 subject: 'Jenkins build and deployment success',
-                 to: 'developer1@example.com, developer2@example.com'
+      stage ("Build successful"){
+    steps {
+       //Configure the pipeline to send notification emails to a specified email address at the end of test and security scan stages
+              Echo "emailext body: (Your Jenkins build is successful. The changes are deployed successfully),
+                 subject: (Jenkins build and deployment success),
+                 to: (developer1@example.com)"
     }
-    failure {
-        emailext body: '''Your Jenkins build and deployment failed. Please check the logs for more details.''',
-                 subject: 'Jenkins build and deployment failure',
-                 to: 'developer1@example.com, developer2@example.com'
+     stage ("Build failure"){
+    steps {
+       //Configure the pipeline to send notification emails to a specified email address at the end of test and security scan stages
+              Echo "emailext body: (Your Jenkins build and deployment failed. Please check the logs for more details),
+                 subject: (Jenkins build and deployment failure),
+                 to: (developer1@example.com)"         
     }
 }
   }
